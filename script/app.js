@@ -23,6 +23,16 @@ const SCONTO_OVER65 = 40
 * --- FUNZIONI PRICIPALI ---
 */
 
+// click sul bottone di calcolo
 bottoneCalcolo.addEventListener('click', () => {
     console.log("Calcolo costo biglietto")
+    // ottenimento del valore della tratta inserita
+    const ValoreLunghezzaTratta = parseFloat(testoLunghezzaTratta.value)
+    console.log(ValoreLunghezzaTratta)
+    // - Controllo se è stato inserito un valore corretto
+    if (!ValoreLunghezzaTratta) { // SE è errato esce dalla funzione
+        console.error("Dato errato tratta")
+        return
+    }
+
 })
