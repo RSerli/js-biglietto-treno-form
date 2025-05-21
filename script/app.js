@@ -15,5 +15,14 @@ const SCONTO_UNDER18 = 20
 const SCONTO_OVER65 = 40
 
 /*
-* --- FUNZIONI ---
+* --- FUNZIONI UTILI---
 */
+
+
+/*
+* --- FUNZIONI PRICIPALI ---
+*/
+
+bottoneCalcolo.addEventListener('click', () => {
+    console.log("Calcolo costo biglietto")
+})
