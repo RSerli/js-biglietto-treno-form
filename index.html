@@ -8,7 +8,38 @@
 </head>
 
 <body>
-    <h1>Biglietto del treno</h1>
+    <header>
+        <h1>Biglietto del treno</h1>
+    </header>
+    <main>
+        <!-- form biglietteria -->
+        <form>
+            <!-- Input lunghezza tratta da percorrere -->
+            <div>
+                <label for="testoLunghezzzaTratta">Lunghezza tratta: </label>
+                <input type="text" name="testoLunghezzzaTratta" id="testoLunghezzzaTratta"
+                    placeholder="Indica qualnto è lunga la tratta">
+            </div>
+            <!-- ComboBox sconto -->
+            <div>
+                <label for="selezioneSconto">Selezione sconto: </label>
+                <select type="" name="selezioneSconto" id="selezioneSconto">
+                    <option value="Intero">Prezzo intero</option>
+                    <option value="Under18">Sconto Studente</option>
+                    <option value="Over65">Sconto Over 65</option>
+                </select>
+            </div>
+            <!-- Bottone calcola prezzo -->
+            <div>
+                <button type="button" id="bottoneCalcolaPrezzo">Calcola</button>
+            </div>
+            <!-- Visualizzazione prezzo -->
+            <div>
+                <p>Costo del biglietto:</p>
+                <p id="PrezzoFinaleBiglietto"> - &euro;</p>
+            </div>
+        </form>
+    </main>
 </body>
 
 </html>
