@@ -52,4 +52,12 @@ bottoneCalcolo.addEventListener('click', () => {
     //- Calcolo biglietto sconto over 65
     const CostoBiglietttoScontato_over65 = CalcoloBigliettoConSconto(CostoBiglietttoIntero, SCONTO_OVER65)
     console.log(CostoBiglietttoScontato_over65)
+    // VISUALIZZAZIONE DEL COSTO FINALE DEL BIGLIETTO
+    if (SceltaSconto === 'Under18') {
+        RigaPrezzoFinale.innerHTML = `${CostoBiglietttoScontato_Under18.toFixed(2)} &euro;`
+    } else if (SceltaSconto === 'Over65') {
+        RigaPrezzoFinale.innerHTML = `${CostoBiglietttoScontato_over65.toFixed(2)} &euro;`
+    } else {
+        RigaPrezzoFinale.innerHTML = `${CostoBiglietttoIntero.toFixed(2)} &euro;`
+    }
 })
