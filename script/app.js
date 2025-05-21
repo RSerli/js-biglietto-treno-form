@@ -10,17 +10,17 @@ console.dir(bottoneCalcolo)
 const RigaPrezzoFinale = document.getElementById('PrezzoFinaleBiglietto')
 console.dir(RigaPrezzoFinale)
 
-const COSTO_KILOMETRAGGIO = 0.21
-const SCONTO_UNDER18 = 20
-const SCONTO_OVER65 = 40
+const COSTO_KILOMETRAGGIO = 0.21 //numero Float
+const SCONTO_UNDER18 = 20 //numero Integer
+const SCONTO_OVER65 = 40 //numero Integer
 
 /*
 * --- FUNZIONI UTILI---
 */
 function CalcoloBigliettoConSconto(PrezzoIntero, PercentualeSconto) {
-    const ScontoTotale = (PrezzoIntero * PercentualeSconto) / 100
-    const PrezzoFinale = PrezzoIntero - ScontoTotale
-    //return number Float
+    const ScontoTotale = (PrezzoIntero * PercentualeSconto) / 100 //numero Float
+    const PrezzoFinale = PrezzoIntero - ScontoTotale //numero Float
+    //return numero Float
     return PrezzoFinale
 }
 
@@ -41,10 +41,10 @@ bottoneCalcolo.addEventListener('click', () => {
     }
     // ottenimento del scelta dello sconto da parte dell'utente
     const SceltaSconto = selezioneSconto.value
-    console.log(SceltaSconto)
+    console.log(SceltaSconto) //numero Float
     // CALCOLO DEL BIGLIETTO
     // - Calcolo biglietto intero
-    const CostoBiglietttoIntero = ValoreLunghezzaTratta * COSTO_KILOMETRAGGIO
+    const CostoBiglietttoIntero = ValoreLunghezzaTratta * COSTO_KILOMETRAGGIO //numero Float
     console.log(CostoBiglietttoIntero)
     //- Calcolo biglietto sconto under 18
     const CostoBiglietttoScontato_Under18 = CalcoloBigliettoConSconto(CostoBiglietttoIntero, SCONTO_UNDER18)
