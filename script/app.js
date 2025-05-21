@@ -17,7 +17,12 @@ const SCONTO_OVER65 = 40
 /*
 * --- FUNZIONI UTILI---
 */
-
+function CalcoloBigliettoConSconto(PrezzoIntero, PercentualeSconto) {
+    const ScontoTotale = (PrezzoIntero * PercentualeSconto) / 100
+    const PrezzoFinale = PrezzoIntero - ScontoTotale
+    //return number Float
+    return PrezzoFinale
+}
 
 /*
 * --- FUNZIONI PRICIPALI ---
@@ -37,5 +42,14 @@ bottoneCalcolo.addEventListener('click', () => {
     // ottenimento del scelta dello sconto da parte dell'utente
     const SceltaSconto = selezioneSconto.value
     console.log(SceltaSconto)
-
+    // CALCOLO DEL BIGLIETTO
+    // - Calcolo biglietto intero
+    const CostoBiglietttoIntero = ValoreLunghezzaTratta * COSTO_KILOMETRAGGIO
+    console.log(CostoBiglietttoIntero)
+    //- Calcolo biglietto sconto under 18
+    const CostoBiglietttoScontato_Under18 = CalcoloBigliettoConSconto(CostoBiglietttoIntero, SCONTO_UNDER18)
+    console.log(CostoBiglietttoScontato_Under18)
+    //- Calcolo biglietto sconto over 65
+    const CostoBiglietttoScontato_over65 = CalcoloBigliettoConSconto(CostoBiglietttoIntero, SCONTO_OVER65)
+    console.log(CostoBiglietttoScontato_over65)
 })
