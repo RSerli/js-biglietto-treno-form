@@ -34,5 +34,8 @@ bottoneCalcolo.addEventListener('click', () => {
         console.error("Dato errato tratta")
         return
     }
+    // ottenimento del scelta dello sconto da parte dell'utente
+    const SceltaSconto = selezioneSconto.value
+    console.log(SceltaSconto)
 
 })
