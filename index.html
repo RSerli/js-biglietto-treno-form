@@ -5,22 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biglietto Treno form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
 
 <body>
+    <!--      PRE-Bootstrap
     <header>
         <h1>Biglietto del treno</h1>
     </header>
     <main>
-        <!-- form biglietteria -->
         <form>
-            <!-- Input lunghezza tratta da percorrere -->
+        
             <div>
                 <label for="testoLunghezzzaTratta">Lunghezza tratta: </label>
                 <input type="text" name="testoLunghezzzaTratta" id="testoLunghezzzaTratta"
                     placeholder="Indica qualnto è lunga la tratta">
             </div>
-            <!-- ComboBox sconto -->
+            ì
             <div>
                 <label for="selezioneSconto">Selezione sconto: </label>
                 <select name="selezioneSconto" id="selezioneSconto">
@@ -29,19 +32,121 @@
                     <option value="Over65">Sconto Over 65</option>
                 </select>
             </div>
-            <!-- Bottone calcola prezzo -->
+            ì
             <div>
                 <button type="button" id="bottoneCalcolaPrezzo">Calcola</button>
             </div>
-            <!-- Visualizzazione prezzo -->
+            
             <div>
                 <p>Costo del biglietto:</p>
                 <p id="PrezzoFinaleBiglietto"> - &euro;</p>
             </div>
         </form>
-    </main>
+    </main> -->
+
+    <section class="py-3">
+        <header>
+            <div class="container">
+                <h1>Biglietteria Treno</h1>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="row">
+                    <!-- Form input dati passeggero -->
+                    <div class="col-12 col-md-7">
+                        <form class="row g-3" id="inputForm">
+                            <!-- Input Nome testo -->
+                            <div class="col-md-6">
+                                <label for="inputFirstName" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="inputFirstName" placeholder="Mario"
+                                    required>
+                            </div>
+                            <!-- Input Cognome testo -->
+                            <div class="col-md-6">
+                                <label for="inputSurname" class="form-label">Cognome</label>
+                                <input type="text" class="form-control" id="inputSurname" placeholder="Rossi" required>
+                            </div>
+                            <!-- Input Chilometraggio -->
+                            <div class="col-12 d-flex">
+                                <label for="testoLunghezzzaTratta">Lunghezza tratta: </label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="testoLunghezzzaTratta"
+                                        id="testoLunghezzzaTratta" placeholder="Inserisci lunghezza tratta">
+                                    <span class="input-group-text">Km</span>
+                                </div>
+                            </div>
+                            <!-- Selezione sconto -->
+                            <div class="col-md-6">
+                                <label for="selezioneSconto">Selezione sconto: </label>
+                                <select name="selezioneSconto" class="form-select" id="selezioneSconto">
+                                    <option value="Intero">Prezzo intero</option>
+                                    <option value="Under18">Sconto Studente</option>
+                                    <option value="Over65">Sconto Over 65</option>
+                                </select>
+                            </div>
+                            <!-- Preview Prezzo del biglietto -->
+                            <div class="col-md-6">
+                                <label for="PrezzoFinaleBiglietto">Costo: </label>
+                                <input type="text" class="form-control" id="PrezzoFinaleBiglietto" value=" - &euro;"
+                                    readonly>
+                            </div>
+                            <!-- Pulsante Submit -->
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary" id="bottoneCalcolaPrezzo">Calcola</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Stampa biglietto -->
+                    <div class="col-12 col-md-5" id="cardBiglietto">
+                        <div class="card mb-3">
+                            <!-- Sfondo compagnia ferroviara -->
+                            <img src="./img/SfondoBigliettoTreno.jpg" class="card-img-top" alt="SfondoCompagniaTreno">
+                            <!-- Dati Biglietto -->
+                            <div class="card-body">
+                                <h5 class="card-title">Ferrovie Italo-Svizzere</h5>
+                                <!-- Intestatario biglietto -->
+                                <figure>
+                                    <blockquote class="blockquote">
+                                        <p>NomeCognome</p>
+                                    </blockquote>
+                                    <figcaption class="blockquote-footer">
+                                        Nome e Cognome
+                                    </figcaption>
+                                </figure>
+                                <!-- Tipologia biglietto -->
+                                <figure>
+                                    <blockquote class="blockquote">
+                                        <p>TipologiaBilgietto</p>
+                                    </blockquote>
+                                    <figcaption class="blockquote-footer">
+                                        Tipologia bilgietto
+                                    </figcaption>
+                                </figure>
+                                <!-- Tipologia biglietto -->
+                                <figure>
+                                    <blockquote class="blockquote">
+                                        <p>CostoBiglietto</p>
+                                    </blockquote>
+                                    <figcaption class="blockquote-footer">
+                                        Prezzo
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <!-- Codice a barre -->
+                            <img src="./img/templateBarcode.jpg" class="card-img-bottom" alt="CodiceBarreBiglietto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
     <!-- script -->
-    <script src="./script/app.js"></script>
+    <!-- <script src="./script/app.js"></script> -->
 </body>
 
 </html>
