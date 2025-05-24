@@ -1,6 +1,10 @@
 /*
 * --- VARIABILI ---
 */
+const testoNome = document.getElementById('inputFirstName')
+console.dir(testoNome)
+const testoCognome = document.getElementById('inputSurname')
+console.dir(testoCognome)
 const testoLunghezzaTratta = document.getElementById('testoLunghezzzaTratta')
 console.dir(testoLunghezzaTratta)
 const selezioneSconto = document.getElementById('selezioneSconto')
@@ -9,6 +13,13 @@ const bottoneCalcolo = document.getElementById('bottoneCalcolaPrezzo')
 console.dir(bottoneCalcolo)
 const PreviewPrezzoFinale = document.getElementById('PrezzoFinaleBiglietto')
 console.dir(PreviewPrezzoFinale)
+
+const IntestatarioCardBiglietto = document.getElementById('IntestatarioBiglietto-preview')
+console.dir(IntestatarioCardBiglietto)
+const TipologiaCardBiglietto = document.getElementById('TipologiaBilgietto-preview')
+console.dir(TipologiaCardBiglietto)
+const PrezzoCardBiglietto = document.getElementById('PrezzoBilgietto-preview')
+console.dir(PrezzoCardBiglietto)
 
 const COSTO_KILOMETRAGGIO = 0.21 //numero Float
 const SCONTO_UNDER18 = 20 //numero Integer
@@ -22,6 +33,12 @@ function CalcoloBigliettoConSconto(PrezzoIntero, PercentualeSconto) {
     const PrezzoFinale = PrezzoIntero - ScontoTotale //numero Float
     //return numero Float
     return PrezzoFinale
+}
+
+function reloadCardData(nome, cognome, tipologia, costoBiglietto) {
+    IntestatarioCardBiglietto.innerText = `${nome} ${cognome}`
+    TipologiaCardBiglietto.innerText = tipologia
+    PrezzoCardBiglietto.innerText = `${costoBiglietto} €`
 }
 
 /*
@@ -54,11 +71,19 @@ bottoneCalcolo.addEventListener('click', (event) => {
     const CostoBiglietttoScontato_over65 = CalcoloBigliettoConSconto(CostoBiglietttoIntero, SCONTO_OVER65)
     console.log(CostoBiglietttoScontato_over65)
     // VISUALIZZAZIONE DEL COSTO FINALE DEL BIGLIETTO
+    let ValoreBiglietto
     if (SceltaSconto === 'Under18') {
-        PreviewPrezzoFinale.value = CostoBiglietttoScontato_Under18.toFixed(2)
+        ValoreBiglietto = CostoBiglietttoScontato_Under18.toFixed(2)
     } else if (SceltaSconto === 'Over65') {
-        PreviewPrezzoFinale.value = CostoBiglietttoScontato_over65.toFixed(2)
+        ValoreBiglietto = CostoBiglietttoScontato_over65.toFixed(2)
     } else {
-        PreviewPrezzoFinale.value = CostoBiglietttoIntero.toFixed(2)
+        ValoreBiglietto = CostoBiglietttoIntero.toFixed(2)
     }
+    PreviewPrezzoFinale.value = ValoreBiglietto
+    // stampa dati sulla card di preview
+    const NomeCard = testoNome.value
+    console.log(NomeCard)
+    const CognomeCard = testoCognome.value
+    console.log(CognomeCard)
+    reloadCardData(NomeCard, CognomeCard, SceltaSconto, ValoreBiglietto)
 })
