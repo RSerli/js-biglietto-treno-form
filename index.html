@@ -88,8 +88,12 @@
                             <!-- Preview Prezzo del biglietto -->
                             <div class="col-md-6">
                                 <label for="PrezzoFinaleBiglietto">Costo: </label>
-                                <input type="text" class="form-control" id="PrezzoFinaleBiglietto" value=" - &euro;"
-                                    readonly>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="PrezzoFinaleBiglietto"
+                                        id="PrezzoFinaleBiglietto" readonly>
+                                    <span class="input-group-text">&euro;</span>
+                                </div>
+                                <!-- <input type="text" class="form-control" id="PrezzoFinaleBiglietto" readonly> -->
                             </div>
                             <!-- Pulsante Submit -->
                             <div class="col-12">
@@ -146,7 +150,7 @@
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
     <!-- script -->
-    <!-- <script src="./script/app.js"></script> -->
+    <script src="./script/app.js"></script>
 </body>
 
 </html>

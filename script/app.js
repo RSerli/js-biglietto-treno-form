@@ -7,8 +7,8 @@ const selezioneSconto = document.getElementById('selezioneSconto')
 console.dir(selezioneSconto)
 const bottoneCalcolo = document.getElementById('bottoneCalcolaPrezzo')
 console.dir(bottoneCalcolo)
-const RigaPrezzoFinale = document.getElementById('PrezzoFinaleBiglietto')
-console.dir(RigaPrezzoFinale)
+const PreviewPrezzoFinale = document.getElementById('PrezzoFinaleBiglietto')
+console.dir(PreviewPrezzoFinale)
 
 const COSTO_KILOMETRAGGIO = 0.21 //numero Float
 const SCONTO_UNDER18 = 20 //numero Integer
@@ -29,7 +29,8 @@ function CalcoloBigliettoConSconto(PrezzoIntero, PercentualeSconto) {
 */
 
 // click sul bottone di calcolo
-bottoneCalcolo.addEventListener('click', () => {
+bottoneCalcolo.addEventListener('click', (event) => {
+    event.preventDefault()
     console.log("Calcolo costo biglietto")
     // ottenimento del valore della tratta inserita
     const ValoreLunghezzaTratta = parseFloat(testoLunghezzaTratta.value)
@@ -54,10 +55,10 @@ bottoneCalcolo.addEventListener('click', () => {
     console.log(CostoBiglietttoScontato_over65)
     // VISUALIZZAZIONE DEL COSTO FINALE DEL BIGLIETTO
     if (SceltaSconto === 'Under18') {
-        RigaPrezzoFinale.innerHTML = `${CostoBiglietttoScontato_Under18.toFixed(2)} &euro;`
+        PreviewPrezzoFinale.value = CostoBiglietttoScontato_Under18.toFixed(2)
     } else if (SceltaSconto === 'Over65') {
-        RigaPrezzoFinale.innerHTML = `${CostoBiglietttoScontato_over65.toFixed(2)} &euro;`
+        PreviewPrezzoFinale.value = CostoBiglietttoScontato_over65.toFixed(2)
     } else {
-        RigaPrezzoFinale.innerHTML = `${CostoBiglietttoIntero.toFixed(2)} &euro;`
+        PreviewPrezzoFinale.value = CostoBiglietttoIntero.toFixed(2)
     }
 })
